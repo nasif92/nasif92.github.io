@@ -1,65 +1,36 @@
-<!DOCTYPE html>
-<html lang="english">
-<head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="generator" content="Pelican" />
-        <title>Nasif's Cool Site</title>
-        <link rel="stylesheet" href="https://nasif92.github.io/-nasif92-.github.io/theme/css/main.css" />
-        <link href="https://nasif92.github.io/-nasif92-.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Nasif's Cool Site Atom Feed" />
-</head>
-
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="https://nasif92.github.io/-nasif92-.github.io/">Nasif's Cool Site</a></h1>
-                <nav><ul>
-                    <li><a href="https://nasif92.github.io/-nasif92-.github.io/category/blog.html">Blog</a></li>
-                </ul></nav>
-        </header><!-- /#banner -->
-
-            <aside id="featured" class="body">
-                <article>
-                    <h1 class="entry-title"><a href="https://nasif92.github.io/-nasif92-.github.io/my-first-article.html">My First Article</a></h1>
-<footer class="post-info">
-        <abbr class="published" title="2019-01-07T08:00:00-07:00">
-                Published: Mon 07 January 2019
-        </abbr>
-
-        <address class="vcard author">
-                By                         <a class="url fn" href="https://nasif92.github.io/-nasif92-.github.io/author/nasif-hossain.html">Nasif Hossain</a>
-        </address>
-<p>In <a href="https://nasif92.github.io/-nasif92-.github.io/category/blog.html">Blog</a>.</p>
-
-</footer><!-- /.post-info --><p>I like free static web hosting.</p>                </article>
-            </aside><!-- /#featured -->
-        <section id="extras" class="body">
-                <div class="blogroll">
-                        <h2>links</h2>
-                        <ul>
-                            <li><a href="https://getpelican.com/">Pelican</a></li>
-                            <li><a href="https://www.python.org/">Python.org</a></li>
-                            <li><a href="https://palletsprojects.com/p/jinja/">Jinja2</a></li>
-                            <li><a href="#">You can modify those links in your config file</a></li>
-                        </ul>
-                </div><!-- /.blogroll -->
-                <div class="social">
-                        <h2>social</h2>
-                        <ul>
-                            <li><a href="https://nasif92.github.io/-nasif92-.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
-
-                            <li><a href="#">You can add links in your config file</a></li>
-                            <li><a href="#">Another social link</a></li>
-                        </ul>
-                </div><!-- /.social -->
-        </section><!-- /#extras -->
-
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
-                </address><!-- /#about -->
-
-                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
-        </footer><!-- /#contentinfo -->
-
-</body>
-</html>
+<!doctype html>
+<html lang="en-CA"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nasif Hossain | Computational Pathology</title>
+<meta name="description" content="Nasif Hossain's research in computational pathology, from classifying individual nuclei to building inspectable breast cancer scoring tools in QuPath.">
+<link rel="icon" href="data:,"><link rel="stylesheet" href="./base.css"><link rel="stylesheet" href="./style.css"><script src="./plate.js" defer></script>
+</head><body id="top"><a class="skip" href="#main">Skip to content</a>
+<header class="wrap"><a class="brand" href="#top"><span class="monogram">NH</span> Nasif Hossain</a><nav aria-label="Primary"><a href="#research">Research</a><a href="#publications">Publications</a><a href="#experience">Experience</a><a href="#contact">Contact&nbsp; ↗</a></nav></header>
+<main id="main">
+<section class="hero wrap" aria-labelledby="name"><div class="intro">
+<div class="label"><span class="dot"></span> Computational pathology</div>
+<h1 id="name">Nasif<br><i>Hossain</i></h1>
+<p class="lead">I study how to turn breast cancer slides into biomarker scores that pathologists can trace back to individual cells.</p>
+<p class="affil">MSc Researcher, Computing Science<br>University of Alberta · Cross Cancer Institute</p>
+<div class="actions"><a class="button" href="#research">Explore research <span>↓</span></a><a class="textlink" href="https://github.com/nasif92" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
+</div><figure class="plate"><div class="platehead"><span>FIG. 01</span><span>MORPHOLOGY ATLAS</span></div>
+<div class="frame"><img id="plate-image" width="1100" height="740" src="./assets/tissue.webp" alt="Illustration of gland-like tissue structures, with rose-coloured nuclei surrounding pale lumina."><span class="cross tl">+</span><span class="cross br">+</span><span class="roi" aria-hidden="true"></span></div>
+<figcaption><div><span class="label">Schematic study</span><strong id="plate-title">Tissue architecture</strong></div><div class="switch" hidden aria-label="Illustration layer" role="group"><button data-layer="tissue" aria-pressed="true">Tissue</button><button data-layer="nuclei" aria-pressed="false">Nuclei</button></div></figcaption>
+</figure></section>
+<section class="wrap content" id="research"><div class="sectionhead"><div class="label">01 / Research</div><h2>From nuclei to clinical scores</h2></div>
+<div class="projects">
+<details><summary><span class="seq">01.1</span><span><small>Cell classification</small><strong>Reading individual nuclei</strong></span><span class="plus"></span></summary><div class="detail"><p>I benchmarked StarDist and Cellpose for nucleus detection and trained a classifier against pathologist annotations. It uses measurements a reviewer can inspect: a nucleus’s shape, staining intensity and relationship to nearby cells.</p><p>My next question is what image texture adds to those measurements. I’m investigating how to combine learned representations with handcrafted features across stains and magnifications, particularly when only a small fraction of nuclei have expert labels.</p></div></details>
+<details><summary><span class="seq">01.2</span><span><small>Open-source software</small><strong>Scoring slides in QuPath</strong></span><span class="plus"></span></summary><div class="detail"><p>I built tools that bring segmentation outputs into QuPath and support two scoring workflows: PD-L1 Combined Positive Score and Magee equation calculations. Keeping the detections on the slide lets a pathologist inspect the cells behind a score.</p><a class="textlink" href="https://github.com/nasif92/qupath" target="_blank" rel="noopener noreferrer">Explore my QuPath fork ↗</a></div></details>
+<details><summary><span class="seq">01.3</span><span><small>Interpretable modelling</small><strong>Testing the stability of Magee triage</strong></span><span class="plus"></span></summary><div class="detail"><p>When two versions of a pipeline give different results, which changes actually matter? I study how variations in ER, PR and Ki-67 measurements affect Magee-based triage for Oncotype DX testing.</p><p>I’m exploring decision trees as a way to show where a change in a biomarker measurement might change a triage decision. This is a research tool, not a clinical recommendation.</p></div></details>
+</div></section>
+<section class="pubband" id="publications"><div class="wrap pubgrid"><div><div class="label">02 / Publications</div><h2>Selected publication</h2></div><article><div class="label">2026 &nbsp; / &nbsp; MICCAI · MVAA satellite event</div><h3><a href="https://papers.miccai.org/miccai-2026-sat/MVAA_101.html" target="_blank" rel="noopener noreferrer">When Does Unlabelled Data Help? A Shift-Aware Semi-supervised Study of Multimodal Mitral Valve Segmentation</a></h3>
+<p>Sidratul Montaha, <b>Nasif Hossain</b>, Michelle Noga, Kumaradevan Punithakumar, Nilanjan Ray</p>
+<p>We studied CT and surgical video alongside a fully supervised ultrasound reference. Reliable pseudo-labels helped in both CT and video, but methods designed to handle changes in image appearance mattered most for surgical video.</p>
+<div class="actions"><a class="textlink" href="https://papers.miccai.org/miccai-2026-sat/MVAA_101.html" target="_blank" rel="noopener noreferrer">Proceedings ↗</a><a class="textlink" href="https://papers.miccai.org/miccai-2026-sat/paper/MVAA_101.pdf" target="_blank" rel="noopener noreferrer">Open paper (PDF) ↗</a></div></article></div></section>
+<section class="wrap content" id="experience"><div class="sectionhead"><div class="label">03 / Experience</div><h2>Beyond the slide</h2></div>
+<div class="roles"><article><small>Research &amp; education</small><h3>University of Alberta</h3><p>After my BSc in Computing Science, I continued at Alberta for my MSc under Dr. Nilanjan Ray and Dr. Gilbert Bigras. My work with the Cross Cancer Institute connects computer vision experiments to questions raised by pathologists.</p></article>
+<article><small>Teaching</small><h3>Computing science in the classroom</h3><p>As a computing science teaching assistant at Alberta and a former machine learning lab instructor at NorQuest College, I’ve helped students work through algorithms, databases and machine learning in code.</p></article>
+<article><small>Industry</small><h3>W Apparels Ltd.</h3><p>As Director of Sourcing and Technology, I work across apparel sourcing, merchandising and North American client relationships. My technology work connects inventory and e-commerce systems to the people using them day to day.</p></article>
+<article><small>Graduate service</small><h3>Computing Science Graduate Students’ Association</h3><p>As VP Treasurer, I review spending, plan budgets and track funding across years to help the association make informed decisions for graduate students.</p></article></div></section>
+<section class="contact" id="contact"><div class="wrap contactgrid"><div><div class="label">04 / Contact</div><h2>Get in touch.</h2><p>For research collaborations, teaching enquiries or questions about my QuPath work.</p></div><div class="contactlinks"><a href="mailto:nhossain@ualberta.ca">nhossain@ualberta.ca <span>↗</span></a><a href="https://github.com/nasif92" target="_blank" rel="noopener noreferrer">GitHub <span>↗</span></a><a href="https://www.linkedin.com/in/nasif-ualberta" target="_blank" rel="noopener noreferrer">LinkedIn <span>↗</span></a></div></div></section>
+</main><footer class="wrap"><span>Nasif Hossain · Edmonton, Alberta</span><a href="#top">Back to top ↑</a></footer></body></html>
